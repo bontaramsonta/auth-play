@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    container_name: db_auth-play
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - ${POSTGRES_PORT}:5432
+    volumes:
+      - ./.data/pg:/var/lib/postgresql/data
